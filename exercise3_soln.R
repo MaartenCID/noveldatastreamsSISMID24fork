@@ -3,8 +3,6 @@
 # of the data traces, you can loop the code over the other columns, storing the results in a list.
 library(lubridate)
 
-setwd('/Users/fredlu/repos/SISMID23')
-
 
 df <- read.csv('./data/covid_traces_WA.csv')
 df$date <- mdy(df$date)
@@ -12,7 +10,7 @@ df$date <- mdy(df$date)
 signals = c('new_cases', 'upToDate', 'cdc_ili',
             'Twitter_RelatedTweets', 'google_fever',
             'Kinsa_AnomalousFeverAbsolute')
-par(mfrow=c(3, 2))
+par(mfrow=c(1, 1))
 plot(df$date, df[, signals[1]], type='l', ylab=signals[1])
 plot(df$date, df[, signals[2]], type='l', ylab=signals[2])
 plot(df$date, df[, signals[3]], type='l', ylab=signals[3])
@@ -37,7 +35,7 @@ for (i in 11:nrow(df)) {
 }
 
 # (c)
-par(mfrow=c(3, 1))
+par(mfrow=c(1, 1))
 plot(df$date, df[, 'new_cases'], type='l')
 plot(df$date, alpha_arr, type='l', col='blue')
 abline(h=1, col='red')
@@ -69,10 +67,14 @@ for (i in 10:nrow(df)) {
 # indices where outbreaks occur
 locs <- which(out_arr == 1)
 
-par(mfrow=c(3, 1))
+par(mfrow=c(1, 1))
 plot(df$date, df[, 'new_cases'], type='l')
 points(df$date[locs], df[locs, 'new_cases'], col='red', pch=4)
 plot(df$date, alpha_arr, type='l', col='blue')
 abline(h=1, col='red')
 plot(df$date, as.integer(alpha_arr > 1), type='l', col='green')
 
+
+
+
+test
