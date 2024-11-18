@@ -15,3 +15,9 @@ plot(df$date, df[, signals[3]], type='l', ylab=signals[3])
 plot(df$date, df[, signals[4]], type='l', ylab=signals[4])
 plot(df$date, df[, signals[5]], type='l', ylab=signals[5])
 plot(df$date, df[, signals[6]], type='l', ylab=signals[6])
+
+s
+s
+s
+s
+s
